@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Smart Fitness</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon>
+
+        <span class="span">Smart Fitness Hub</span>
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-sharp" aria-hidden="true"></ion-icon>
+        </button>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="../index.html" class="navbar-link active" data-nav-link>Home</a>
+
+          </li>
+
+          <li>
+            <a href="#dashboard" class="navbar-link" data-nav-link>Dashboard</a>
+          </li>
+
+          <li>
+            <a href="../index.html#features" class="navbar-link" data-nav-link>Features</a>
+          </li>
+
+          <li>
+            <a href="../index.htmls#ask-question" class="navbar-link" data-nav-link>Ask Questions</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+    </div>
+  </header>
+
+
+  <!-- Sign-Up Section -->
+  <section class="sign-up section bg-dark">
+    <div class="container">
+      <h2 class="section-title text-center">Sign Up</h2>
+      <p class="section-text text-center">Join Ai-Fitness and start your personalized fitness journey today!</p>
+
+      <!-- Multi-Step Form -->
+      <form id="signupForm" class="question-form">
+        <!-- Step Indicator -->
+        <div class="step-indicator">
+          <span class="step active"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+        </div>
+
+        <!-- Step 1: Name and Email -->
+        <div class="form-step active" data-step="1">
+          <div class="form-group">
+            <label for="name" class="form-label">Name*</label>
+            <input type="text" id="name" class="form-input valid" placeholder="Enter your name" required>
+            <small class="error-message"></small>
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Email*</label>
+            <input type="email" id="email" class="form-input valid" placeholder="Enter your email" required>
+            <small class="error-message"></small>
+          </div>
+          <div class="form-group">
+            <label for="password" class="form-label">Password*</label>
+            <input type="password" id="password" class="form-input valid" placeholder="Create a password" required>
+            <small class="error-message"></small>
+          </div>
+          <div class="form-group">
+            <label for="confirm_password" class="form-label">Confirm Password*</label>
+            <input type="password" id="confirm_password" class="form-input valid" placeholder="Confirm your password" required>
+            <small class="error-message"></small>
+          </div>
+        </div>
+
+        <!-- Step 2: Physical Details -->
+        <div class="form-step" data-step="2">
+          <div class="form-group">
+            <label for="age" class="form-label">Age*</label>
+            <input type="number" id="age" class="form-input valid" placeholder="Enter your age" required>
+            <small class="error-message"></small>
+          </div>
+          <div class="form-group">
+            <label for="gender" class="form-label">Gender*</label>
+            <select id="gender" class="form-input valid" required>
+              <option value="" disabled selected>Select your gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+            <small class="error-message"></small>
+          </div>
+          <div class="form-group">
+            <label for="weight" class="form-label">Weight (kg)*</label>
+            <input type="number" id="weight" class="form-input valid" placeholder="Enter your weight in kg" required>
+            <small class="error-message"></small>
+          </div>
+          <div class="form-group">
+            <label for="height" class="form-label">Height (cm)*</label>
+            <input type="number" id="height" class="form-input valid" placeholder="Enter your height in cm" required>
+            <small class="error-message"></small>
+          </div>
+        </div>
+
+        <!-- Step 3: Fitness Preferences -->
+        <div class="form-step" data-step="3">
+          <div class="form-group">
+            <label for="activity-level" class="form-label">Activity Level*</label>
+            <select id="activity-level" class="form-input valid" required>
+              <option value="" disabled selected>Select your activity level</option>
+              <option value="lightly-active">Lightly Active</option>
+              <option value="moderately-active">Moderately Active</option>
+              <option value="very-active">Very Active</option>
+            </select>
+            <small class="error-message"></small>
+          </div>
+          <div class="form-group">
+            <label for="fitness-goals" class="form-label">Fitness Goals*</label>
+            <select id="fitness-goals" class="form-input valid" required>
+              <option value="" disabled selected>Select your fitness goal</option>
+              <option value="weight-loss">Weight Loss</option>
+              <option value="muscle-gain">Muscle Gain</option>
+              <option value="endurance">Endurance</option>
+              <option value="flexibility">Flexibility</option>
+              <option value="general-health">General Health</option>
+            </select>
+            <small class="error-message"></small>
+          </div>
+          <div class="form-group">
+            <label for="dietary-preferences" class="form-label">Dietary Preferences</label>
+            <select id="dietary-preferences" class="form-input valid" required>
+              <option value="" disabled selected>Select your dietary preference</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="vegan">Vegan</option>
+              <option value="non-vegetarian">Non-Vegetarian</option>
+              <option value="other">Other</option>
+            </select>
+            <small class="error-message"></small>
+          </div>
+        </div>
+
+        <!-- Step 4: Medical and Fitness History -->
+        <div class="form-step" data-step="4">
+          <div class="form-group">
+            <label for="medical-history" class="form-label">Medical Conditions (if any)</label>
+            <textarea id="medical-history" class="form-textarea valid" placeholder="Describe any past medical conditions"></textarea>
+            <small class="error-message"></small>
+          </div>
+          <div class="form-group">
+            <label for="current-fitness-level" class="form-label">Current Fitness Level*</label>
+            <select id="current-fitness-level" class="form-input valid" required>
+              <option value="" disabled selected>Select your current fitness level</option>
+              <option value="nothing">Nothing</option>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
+            <small class="error-message"></small>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="form-navigation">
+          <button type="button" id="prevBtn">Back</button>
+          <button type="button" id="nextBtn">Next</button>
+          <button type="submit" id="submitBtn" style="display: none;">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Ai-Fitness. All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script type="module" src="./signup.js"></script>
+</body>
+</html>

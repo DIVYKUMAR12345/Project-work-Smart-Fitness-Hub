@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Smart Fitness Hub</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Font preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600;700;800;900&family=Rubik:wght@400;500;800&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+  <!-- Header -->
+  <header class="header transparent-header" data-header>
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon>
+        <span class="span">Smart Fitness Hub</span>
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-sharp" aria-hidden="true"></ion-icon>
+        </button>
+
+        <ul class="navbar-list">
+          <li>
+            <a href="../index.html" class="navbar-link" data-nav-link>Home</a>
+          </li>
+          <li>
+            <a href="#" class="navbar-link active" data-nav-link>Dashboard</a>
+          </li>
+          <li>
+            <a href="../index.html#features" class="navbar-link" data-nav-link>Features</a>
+          </li>
+          <li>
+            <a href="../index.html#ask-question" class="navbar-link" data-nav-link>Ask Questions</a>
+          </li>
+        </ul>
+      </nav>
+
+      <button id="logoutBtn" class="btn btn-secondary">
+        <ion-icon name="log-out-outline" class="logout-icon"></ion-icon>
+        Logout
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Dashboard Content -->
+  <main>
+    <section class="dashboard-hero section">
+      <div class="container">
+        <h1 class="dashboard-greeting">Welcome back, <span id="username">User</span>!</h1>
+        <p class="dashboard-subtitle">Your fitness journey continues today.</p>
+      </div>
+    </section>
+    
+    <section class="dashboard-content section">
+      <div class="container">
+        <div class="dashboard-grid">
+          <!-- Improved sidebar with user info -->
+          <div class="dashboard-sidebar">
+            <div class="user-profile">
+              <div class="avatar-wrapper">
+                <div class="avatar-container">
+                  <ion-icon name="person-circle-outline" class="avatar-icon"></ion-icon>
+                </div>
+              </div>
+              <div class="user-details">
+                <h3 id="profile-name">User Name</h3>
+                <p id="profile-email">user@example.com</p>
+              </div>
+            </div>
+            
+            <nav class="dashboard-nav">
+              <ul>
+                <li><a href="#" class="dashboard-nav-link active"><ion-icon name="nutrition-outline"></ion-icon>Meal Plans</a></li>
+                <li><a href="#" class="dashboard-nav-link"><ion-icon name="barbell-outline"></ion-icon>Workouts</a></li>
+                <li><a href="#" class="dashboard-nav-link"><ion-icon name="stats-chart-outline"></ion-icon>Progress</a></li>
+                <li><a href="#" class="dashboard-nav-link"><ion-icon name="settings-outline"></ion-icon>Settings</a></li>
+              </ul>
+            </nav>
+          </div>
+          
+          <!-- Main content area -->
+          <div class="dashboard-main">
+            <div class="dashboard-header">
+              <h2>Your Daily Meal Plan</h2>
+              <div class="dashboard-controls">
+                <div class="meal-plan-type">
+                  <label for="day-type">Day type:</label>
+                  <select id="day-type">
+                    <option value="weekday">Weekday</option>
+                    <option value="weekend">Weekend</option>
+                  </select>
+                  <small class="auto-detect-info">(Auto-detected)</small>
+                </div>
+                <button id="refresh-meal-plan" class="btn btn-small">
+                  <ion-icon name="refresh-outline"></ion-icon> Refresh
+                </button>
+              </div>
+            </div>
+            
+            <div id="meal-plan-container" class="meal-plan-container">
+              <div class="loading">
+                <ion-icon name="nutrition-outline" class="loading-icon"></ion-icon>
+                <p>Loading your personalized meal plan...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Smart Fitness Hub. All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- Template for meal card -->
+  <template id="meal-card-template">
+    <div class="meal-card">
+      <div class="meal-header">
+        <h3 class="meal-time"></h3>
+      </div>
+      <div class="meal-content">
+        <h4 class="meal-name"></h4>
+        <div class="meal-nutrition">
+          <div class="nutrition-item">
+            <span class="nutrition-label">Calories</span>
+            <span class="nutrition-value calories"></span>
+          </div>
+          <div class="nutrition-item">
+            <span class="nutrition-label">Protein</span>
+            <span class="nutrition-value protein"></span>g
+          </div>
+          <div class="nutrition-item">
+            <span class="nutrition-label">Carbs</span>
+            <span class="nutrition-value carbs"></span>g
+          </div>
+          <div class="nutrition-item">
+            <span class="nutrition-label">Fat</span>
+            <span class="nutrition-value fat"></span>g
+          </div>
+        </div>
+        <div class="meal-details">
+          <div class="ingredients">
+            <h5>Ingredients:</h5>
+            <ul class="ingredients-list"></ul>
+          </div>
+          <div class="preparation">
+            <h5>Preparation:</h5>
+            <p class="preparation-text"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- Scripts -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="../assets/js/script.js"></script>
+  <script type="module" src="./dashboard.js"></script>
+</body>
+</html>

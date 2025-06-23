@@ -1,0 +1,135 @@
+/*-----------------------------------*\
+  #SIGN-UP PAGE STYLES
+\*-----------------------------------*/
+
+/* Background Image */
+.sign-up {
+  position: relative;
+  overflow: hidden;
+}
+
+
+.sign-up::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/images/signbg.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5; /* 50% opacity */
+  z-index: 1;
+  filter: blur(5px);
+}
+
+/* Form Styling */
+.question-form {
+  background-color: var(--rich-black-fogra-29-2);
+  padding: 40px;
+  border-radius: var(--radius-10);
+  box-shadow: var(--shadow-2);
+  max-width: 500px;
+  margin-inline: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.form-group {
+  margin-block-end: 20px;
+}
+
+.form-input,
+.form-textarea {
+  border: 1px solid var(--coquelicot);
+  background-color: var(--rich-black-fogra-29-2);
+  color: var(--white);
+  transition: var(--transition-1);
+  width: 100%;
+  padding: 15px;
+  border-radius: var(--radius-8);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: var(--coquelicot);
+  box-shadow: var(--shadow-2);
+}
+
+.form-textarea {
+  resize: none;
+  height: 120px;
+}
+
+/* Step Indicator */
+.step-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-block: 20px;
+}
+
+.step {
+  width: 20px;
+  height: 20px;
+  background-color: var(--silver-metallic);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.step.active {
+  background-color: var(--coquelicot);
+}
+
+/* Button Animations */
+#prevBtn,
+#nextBtn,
+#submitBtn {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: var(--radius-8);
+  transition: transform 0.3s ease;
+}
+
+#nextBtn,
+#submitBtn {
+  background-color: var(--coquelicot);
+  color: var(--white);
+}
+
+#prevBtn {
+  background-color: var(--white_20);
+  color: var(--white);
+}
+
+#prevBtn:hover,
+#nextBtn:hover,
+#submitBtn:hover {
+  transform: scale(1.1);
+}
+
+/* Validation Styles */
+.form-input.valid {
+  border-color: green;
+}
+
+.form-input.invalid {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 1.2rem;
+  display: none;
+}
+
+.error-message.active {
+  display: block;
+}
+
+/* Bigger Sign-Up Heading */
+.section-title {
+  font-size: var(--fs-2); /* Increase font size */
+  margin-block: 30px 40px;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Smart Fitness</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" data-header>
+    <div class="container">
+      <a href="../index.html" class="logo">
+        <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon>
+        <span class="span">Smart Fitness Hub</span>
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-sharp" aria-hidden="true"></ion-icon>
+        </button>
+
+        <ul class="navbar-list">
+          <li>
+            <a href="../index.html" class="navbar-link" data-nav-link>Home</a>
+          </li>
+          <li>
+            <a href="#dashboard" class="navbar-link" data-nav-link>Dashboard</a>
+          </li>
+          <li>
+            <a href="../index.html#features" class="navbar-link" data-nav-link>Features</a>
+          </li>
+          <li>
+            <a href="../index.html#ask-question" class="navbar-link" data-nav-link>Ask Questions</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Login Section -->
+  <section class="sign-up section bg-dark">
+    <div class="container">
+      <h2 class="section-title text-center">Login</h2>
+      <p class="section-text text-center">Welcome back to Ai-Fitness!</p>
+
+      <!-- Login Form -->
+      <form id="loginForm" class="question-form">
+        <div class="form-group">
+          <label for="email" class="form-label">Email*</label>
+          <input type="text" id="email" class="form-input" placeholder="Enter your email" required>
+          <small class="error-message"></small>
+        </div>
+        
+        <div class="form-group">
+          <label for="password" class="form-label">Password*</label>
+          <input type="password" id="password" class="form-input" placeholder="Enter your password" required>
+          <small class="error-message"></small>
+        </div>
+
+        <div class="form-group forgot-password">
+          <a href="#" class="forgot-password-link">Forgot Password?</a>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Login</button>
+        
+        <div class="signup-prompt">
+          <p>Don't have an account? <a href="../signup/index.html">Sign up</a></p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Ai-Fitness. All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- Add ionicons for the icons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+  <!-- Add login.js script -->
+  <script type="module" src="./login.js"></script>
+</body>
+</html>
